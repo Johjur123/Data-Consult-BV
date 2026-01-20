@@ -1,0 +1,111 @@
+de huidige Fractional.BI site is premium/editorial maar mist “wauw”. Voeg 2 signature moments toe, geïnspireerd door McKinsey/BCG/Bain (editorial tiles/collage, sterke compositie, subtiele motion), zonder de rustige, bestuurlijke stijl te verliezen. Geen gimmicks, geen overmatige glows/gradients, wel high-end ritme + progressive disclosure.
+
+A) Hero upgrade: “Editorial Tile Grid”
+
+Houd de huidige hero copy grotendeels, maar maak de layout sterker:
+
+Links: headline + 1 subline + 1 primary CTA
+
+Rechts: een editorial grid van 3–5 tiles (cards) die verwijzen naar jouw kernwaarde:
+
+Tile 1: “De bestuurskamer-test” (mini case)
+
+Tile 2: “Maturity & Strategy Scan”
+
+Tile 3: “Fractional BI leadership”
+
+Tile 4: “Governance & Team Design”
+
+Tiles moeten verschillen in grootte (compositie zoals McKinsey tiles), met 1 grotere ‘feature’ tile en 2–3 kleinere.
+
+Tiles bevatten: category label (klein), titel (groot), 1 zin, en arrow/hover cue.
+
+Voeg subtiele hover states: lift (2–4px), border accent, arrow slide.
+
+Voeg een heel subtiel parallax effect op de hero image/tiles bij scroll (Framer Motion useScroll), maar mild.
+
+Zorg dat mobile netjes stacked is (tiles als horizontale scroll of stacked cards).
+
+B) Signature section na hero: “De Bestuurskamer-test (30 seconden)”
+
+Maak een sectie met headline + korte intro.
+
+Daarna een scroll-driven story met 4 stappen (progressive disclosure):
+
+Stap 1: “MT wil sturen”
+
+Stap 2: Dashboard A zegt X
+
+Stap 3: Dashboard B zegt Y (conflict)
+
+Stap 4: “Wie heeft mandaat om te beslissen wat klopt?” + “Dit is geen toolprobleem, maar regie.”
+
+Implementatie: sticky left panel (scene) + right steps; active step highlight via IntersectionObserver; content in scene wisselt per step.
+
+Motion: fade/slide in per stap (stagger), maar respecteer prefers-reduced-motion.
+
+Eindig met één CTA: “Plan kennismaking”.
+
+C) Visuele system improvements (subtiel, high-end)
+
+Voeg één extra accenttoon toe voor highlights (sparingly) — bv. “ink blue” of “deep teal” — gebruik alleen voor:
+
+underline accents
+
+active step indicator
+
+hover highlight
+
+kleine labels
+
+Verbeter ritme: wissel rustige secties af met één donkerder/contrasterende band (zoals Bain hero band), maar keep it elegant.
+
+Typography: behoud serif headline, maar verhoog hiërarchie:
+
+headlines meer tracking/kerning consistency
+
+body iets compacter (line-height 1.55–1.65)
+
+voeg 2 micro “hard truths” lines toe als small caps/overline.
+
+D) Copy tweaks (bestuurlijker)
+
+Hero headline blijft “Van Data Chaos naar Bestuurlijk Inzicht.”
+
+Subline aanscherpen naar boardroom language (kies één):
+
+“Wij brengen mandaat, eigenaarschap en prioriteit terug in uw BI—zodat cijfers weer besluitvorming dragen.”
+
+“Van dashboards naar sturing: heldere definities, eigenaarschap en governance die werkt.”
+
+Quote section: voeg onder de quote 3 korte bullets:
+
+“Mandaat: wie beslist bij conflicterende cijfers?”
+
+“Eigenaarschap: wie ‘own’t’ de KPI?”
+
+“Prioriteit: wat ondersteunen we wél/niet?”
+
+E) Code & bestanden
+
+Werk in home.tsx (hero + nieuwe section)
+
+Update navbar.tsx alleen indien nodig voor CTA/scroll links
+
+Houd styling in Tailwind; voeg alleen minimale CSS toe in theme file als nodig.
+
+Houd componenten herbruikbaar; maak BoardroomTestSection.tsx als aparte component als dat netter is.
+
+Zorg voor goede performance (geen zware libs) en toegankelijkheid.
+
+Acceptance criteria
+
+Hero bevat editorial tile grid en voelt direct “McKinsey-level”
+
+Boardroom test sectie is memorabel en werkt op desktop + mobile
+
+Motion is subtiel en uit te zetten met prefers-reduced-motion
+
+Geen visuele drukte, wel duidelijke “wauw” door compositie + storytelling
+
+CTA’s helder: 1 primary CTA boven de fold + 1 aan einde boardroom section
