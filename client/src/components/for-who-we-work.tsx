@@ -48,12 +48,12 @@ export function ForWhoWeWork() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-10">
           {segments.map((segment, index) => (
             <button
               key={segment.id}
               onClick={() => handleClick(segment.id)}
-              className="group text-left border border-white/10 bg-card/40 hover:bg-card/80 hover:border-primary/60 transition-colors p-6 flex flex-col justify-between focus-ring-accent cursor-pointer"
+              className="group text-left pb-6 pt-4 border-b border-white/10 hover:border-primary/60 transition-colors flex flex-col justify-between focus-ring-accent cursor-pointer bg-transparent"
               data-testid={`card-segment-${index}`}
             >
               <div>

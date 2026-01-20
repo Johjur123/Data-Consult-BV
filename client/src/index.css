@@ -94,11 +94,12 @@
 
   /* New lighter surfaces for dual-tone layout */
   .bg-surface-light {
-    background: radial-gradient(circle at top left, rgba(59,130,246,0.10), transparent 55%), #0B1020;
+    /* Veel lichter oppervlak voor content-secties */
+    background: radial-gradient(circle at top left, rgba(59,130,246,0.12), transparent 55%), #111827;
   }
 
   .bg-surface-alt {
-    background: radial-gradient(circle at bottom right, rgba(251,191,36,0.10), transparent 55%), #050A14;
+    background: radial-gradient(circle at bottom right, rgba(251,191,36,0.10), transparent 55%), #020617;
   }
 
   .badge-strategy {
