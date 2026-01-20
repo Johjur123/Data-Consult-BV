@@ -34,7 +34,7 @@ export function ForWhoWeWork() {
   };
 
   return (
-    <section className="py-24 bg-background border-t border-white/5">
+    <section className="py-24 bg-surface-light border-t border-white/5">
       <div className="container mx-auto px-6 md:px-12">
         <div className="mb-12 max-w-3xl">
           <span className="font-mono text-xs text-primary tracking-[0.2em] uppercase mb-4 block" data-testid="text-forwho-kicker">
