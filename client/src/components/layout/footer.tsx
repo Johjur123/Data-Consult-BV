@@ -1,43 +1,57 @@
+import { ArrowUpRight } from "lucide-react";
+
 export function Footer() {
   return (
-    <footer className="bg-foreground text-background py-20">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="grid md:grid-cols-12 gap-12 mb-20">
-          <div className="md:col-span-5">
-            <h3 className="text-3xl font-serif mb-6 text-white">
-              Fractional.BI
+    <footer className="bg-background text-white pt-32 pb-12 border-t border-white/5 relative overflow-hidden">
+      {/* Background Gradient */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="container mx-auto px-6 md:px-12 relative z-10">
+        <div className="grid md:grid-cols-12 gap-16 mb-24">
+          <div className="md:col-span-6">
+            <h3 className="text-4xl md:text-5xl font-serif mb-8 text-white leading-tight">
+              Ready to redefine <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">your data legacy?</span>
             </h3>
-            <p className="text-white/60 text-lg leading-relaxed max-w-sm font-sans">
-              Strategisch leiderschap in data. Wij bouwen de brug tussen complexe data en heldere bestuurlijke besluitvorming.
-            </p>
+            <div className="flex gap-4">
+               <a href="mailto:info@fractionalbi.nl" className="group flex items-center gap-2 text-lg font-mono text-white/60 hover:text-white transition-colors border-b border-transparent hover:border-primary pb-1">
+                  info@fractionalbi.nl
+                  <ArrowUpRight className="w-4 h-4 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+               </a>
+            </div>
           </div>
           
-          <div className="md:col-span-3 md:col-start-7">
-            <h4 className="font-sans font-medium text-white/40 mb-6 uppercase tracking-wider text-xs">Navigatie</h4>
-            <ul className="space-y-4 text-white/80 font-serif">
-              <li className="hover:text-white transition-colors cursor-pointer">Onze Visie</li>
-              <li className="hover:text-white transition-colors cursor-pointer">Diensten</li>
-              <li className="hover:text-white transition-colors cursor-pointer">Over Ons</li>
-              <li className="hover:text-white transition-colors cursor-pointer">Contact</li>
+          <div className="md:col-span-2 md:col-start-8">
+            <h4 className="font-mono text-xs text-primary mb-8 uppercase tracking-widest">Sitemap</h4>
+            <ul className="space-y-4 text-white/60 font-light text-sm">
+              <li className="hover:text-white transition-colors cursor-pointer">Insights</li>
+              <li className="hover:text-white transition-colors cursor-pointer">Services</li>
+              <li className="hover:text-white transition-colors cursor-pointer">About</li>
+              <li className="hover:text-white transition-colors cursor-pointer">Careers</li>
             </ul>
           </div>
           
-          <div className="md:col-span-3">
-            <h4 className="font-sans font-medium text-white/40 mb-6 uppercase tracking-wider text-xs">Kantoor</h4>
-            <div className="space-y-4 text-white/80 font-serif">
-              <p>Zuidas, Amsterdam</p>
-              <p>info@fractionalbi.nl</p>
-              <p>+31 (0)20 123 4567</p>
-            </div>
+          <div className="md:col-span-2">
+            <h4 className="font-mono text-xs text-primary mb-8 uppercase tracking-widest">Socials</h4>
+            <ul className="space-y-4 text-white/60 font-light text-sm">
+              <li className="hover:text-white transition-colors cursor-pointer">LinkedIn</li>
+              <li className="hover:text-white transition-colors cursor-pointer">Twitter / X</li>
+              <li className="hover:text-white transition-colors cursor-pointer">Medium</li>
+            </ul>
+          </div>
+
+          <div className="md:col-span-2">
+            <h4 className="font-mono text-xs text-primary mb-8 uppercase tracking-widest">Legal</h4>
+            <ul className="space-y-4 text-white/60 font-light text-sm">
+              <li className="hover:text-white transition-colors cursor-pointer">Privacy Policy</li>
+              <li className="hover:text-white transition-colors cursor-pointer">Terms of Service</li>
+            </ul>
           </div>
         </div>
         
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-white/40 font-sans uppercase tracking-widest">
-          <div>© {new Date().getFullYear()} Fractional BI.</div>
-          <div className="flex gap-8 mt-4 md:mt-0">
-            <span className="hover:text-white cursor-pointer transition-colors">Algemene Voorwaarden</span>
-            <span className="hover:text-white cursor-pointer transition-colors">Privacy Statement</span>
-          </div>
+        <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center text-[10px] font-mono text-white/30 uppercase tracking-widest">
+          <div>© {new Date().getFullYear()} Fractional BI. All rights reserved.</div>
+          <div className="mt-4 md:mt-0">Amsterdam • London • New York</div>
         </div>
       </div>
     </footer>

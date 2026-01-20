@@ -18,9 +18,9 @@ export function Navbar() {
   }, []);
 
   const navItems = [
-    { label: "Visie", href: "#vision" },
-    { label: "Aanpak", href: "#method" },
+    { label: "Insights", href: "#insights" },
     { label: "Expertise", href: "#expertise" },
+    { label: "Method", href: "#method" },
   ];
 
   const handleNavClick = (href: string) => {
@@ -34,16 +34,16 @@ export function Navbar() {
   return (
     <nav 
       className={cn(
-        "fixed w-full z-50 transition-all duration-300 border-b",
+        "fixed w-full z-50 transition-all duration-500 border-b",
         scrolled 
-          ? "bg-background/95 backdrop-blur-md border-border py-4 shadow-sm" 
-          : "bg-transparent border-transparent py-6"
+          ? "bg-background/80 backdrop-blur-xl border-white/5 py-4" 
+          : "bg-transparent border-transparent py-8"
       )}
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         <Link href="/">
-          <span className="text-2xl font-serif font-semibold text-primary tracking-tight cursor-pointer">
-            Fractional<span className="text-foreground">.BI</span>
+          <span className="text-xl font-mono tracking-widest text-white cursor-pointer hover:text-primary transition-colors duration-300 group">
+            FRACTIONAL<span className="text-primary group-hover:text-white transition-colors">_</span>BI
           </span>
         </Link>
 
@@ -57,16 +57,18 @@ export function Navbar() {
                 e.preventDefault();
                 handleNavClick(item.href);
               }}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors font-sans"
+              className="text-xs font-bold tracking-widest text-white/60 hover:text-white transition-colors uppercase font-mono relative group"
             >
+              <span className="absolute -bottom-2 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover:w-full" />
               {item.label}
             </a>
           ))}
           <Button 
-            className="bg-primary hover:bg-primary/90 text-white rounded-sm px-6 font-medium text-sm transition-all"
+            variant="outline"
+            className="border-white/20 text-white hover:bg-white/10 hover:text-white rounded-none px-8 font-mono text-xs tracking-widest uppercase transition-all hover:border-primary/50"
             onClick={() => handleNavClick("#contact")}
           >
-            Contact
+            Start Strategy
           </Button>
         </div>
 
@@ -74,12 +76,12 @@ export function Navbar() {
         <div className="md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-foreground">
+              <Button variant="ghost" size="icon" className="text-white">
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-background border-l border-border w-[300px]">
-              <div className="flex flex-col gap-8 mt-12">
+            <SheetContent side="right" className="bg-background/95 backdrop-blur-xl border-l border-white/10 w-[300px]">
+              <div className="flex flex-col gap-8 mt-20">
                 {navItems.map((item) => (
                   <a
                     key={item.label}
@@ -88,17 +90,17 @@ export function Navbar() {
                       e.preventDefault();
                       handleNavClick(item.href);
                     }}
-                    className="text-2xl font-serif text-foreground hover:text-primary transition-colors"
+                    className="text-3xl font-serif text-white hover:text-primary transition-colors"
                   >
                     {item.label}
                   </a>
                 ))}
-                <div className="h-px bg-border my-2" />
+                <div className="h-px bg-white/10 my-4" />
                 <Button 
-                  className="w-full bg-primary text-white rounded-sm py-6 text-lg font-serif"
+                  className="w-full bg-primary text-background hover:bg-primary/90 rounded-none py-6 text-sm font-mono tracking-widest uppercase"
                   onClick={() => handleNavClick("#contact")}
                 >
-                  Start Gesprek
+                  Start Strategy
                 </Button>
               </div>
             </SheetContent>
