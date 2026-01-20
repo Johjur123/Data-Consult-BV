@@ -5,25 +5,25 @@ const segments = [
     id: "board",
     title: "Directie & Raad van Bestuur",
     description:
-      "U wilt beslissen op basis van één versie van de waarheid – niet op concurrenterende decks en Excel-sheets.",
+      "U stuurt op strategie en resultaten, maar krijgt verschillende antwoorden op dezelfde vraag. Wij helpen u naar één bestuurlijke waarheid, met duidelijke KPI-keuzes en vast eigenaarschap — zodat besluitvorming versnelt.",
   },
   {
     id: "cfo",
     title: "CFO & Finance",
     description:
-      "U zoekt rust in de rapportagekalender en scherpe KPI's die marge, cash en risico in één blik laten zien.",
+      "U wilt grip op marge, cash en risico, zonder maandelijkse discussies over definities of herkomst van cijfers. Wij brengen rust door financiële KPI’s bestuurlijk te verankeren in governance, tooling en verantwoordelijkheden.",
   },
   {
     id: "bi",
     title: "Head of BI / Data & Analytics",
     description:
-      "U zit klem tussen verzoeken uit de business en een backlog die elke week groeit in plaats van krimpt.",
+      "U zit tussen een groeiende vraag uit de business en een team dat vooral reactief werkt. Wij helpen u prioriteiten, rollen en standaarden aan te brengen — zodat BI van backlog-fabriek naar stuurinstrument beweegt.",
   },
   {
     id: "pe",
     title: "Private Equity & Portfolioteams",
     description:
-      "U wilt portfolio-breed inzicht zónder dat elke participatie zijn eigen BI-speeltuin opzet.",
+      "U wilt consistent inzicht over participaties, zonder dat elke organisatie zijn eigen waarheid bouwt. Wij helpen bij portfolio-brede BI-regie, met ruimte voor lokale verschillen en centrale sturing.",
   },
 ];
 
@@ -44,11 +44,11 @@ export function ForWhoWeWork() {
             Data als bestuurder, niet als bijzaak.
           </h2>
           <p className="text-white/60 text-lg" data-testid="text-forwho-subtitle">
-            Onze trajecten zijn ontworpen voor leiders die verantwoordelijkheid dragen voor P&L, strategie en portfolio – en die voelen dat hun huidige BI daar nog niet op aansluit.
+            Wij werken voor leiders die eindverantwoordelijk zijn voor resultaten — en voelen dat hun BI-omgeving die verantwoordelijkheid nog onvoldoende ondersteunt. Niet door gebrek aan data, maar door gebrek aan richting, eigenaarschap en samenhang.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-10">
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-10 mb-12">
           {segments.map((segment, index) => (
             <button
               key={segment.id}
@@ -68,6 +68,12 @@ export function ForWhoWeWork() {
               </div>
             </button>
           ))}
+        </div>
+
+        <div className="text-center">
+            <p className="text-lg text-white/80 font-serif italic">
+               "In al deze rollen draait het om dezelfde vraag: wie bepaalt wat leidend is — en hoe is dat duurzaam georganiseerd?"
+            </p>
         </div>
       </div>
     </section>

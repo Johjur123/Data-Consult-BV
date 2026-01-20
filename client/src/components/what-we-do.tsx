@@ -5,25 +5,25 @@ const services = [
     title: "Eén BI-agenda",
     tag: "Agenda",
     description:
-      "Een duidelijke lijst van wat wél en niet meer op de BI-agenda staat, afgestemd met MT en teams.",
+      "Een duidelijke, gedragen BI-agenda: wat wél prioriteit heeft, wat bewust niet — afgestemd met MT en teams.",
   },
   {
     title: "Scherpe stuur-KPI's",
     tag: "KPI's",
     description:
-      "Een compacte set KPI's met definities, eigenaar en bron zodat discussies over cijfers stoppen.",
+      "Een compacte set stuur-KPI's met eenduidige definities, vaste eigenaren en herleidbare bronnen — zodat discussies over cijfers stoppen.",
   },
   {
     title: "Werkend ritme",
     tag: "Ritme",
     description:
-      "Een vast overleg- en beslisritme waarin dashboards leiden tot besluiten in plaats van discussies.",
+      "Een vast overleg- en beslisritme waarin data leidt tot keuzes en acties — niet tot herhaling van dezelfde discussie.",
   },
   {
     title: "Een zelfstandig team",
     tag: "Team",
     description:
-      "Een BI- en datateam dat op eigen kracht volgens de nieuwe werkwijze kan blijven leveren.",
+      "Een BI- en datateam met duidelijke rollen, kaders en prioriteiten — dat zelfstandig kan leveren binnen de afgesproken regie.",
   },
 ];
 
@@ -33,14 +33,14 @@ export function WhatWeDo() {
       <div className="container mx-auto px-6 md:px-12">
         <div className="mb-12 max-w-3xl">
           <span className="font-mono text-xs text-primary tracking-[0.2em] uppercase mb-4 block" data-testid="text-whatwedo-kicker">
-            Wat u na 90 dagen heeft
+            Wat regie op data in de praktijk betekent
           </span>
           <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-4" data-testid="text-whatwedo-heading">
-            Regie op data, zichtbaar in de praktijk.
+            Regie op data. Zichtbaar in de praktijk.
           </h2>
           <p className="text-slate-600 text-lg" data-testid="text-whatwedo-subtitle">
-            In een traject van 90 dagen brengen we orde in agenda, KPI's en ritme – zodat data weer een bestuurlijk
-            instrument wordt in plaats van ruis.
+            Wij brengen orde in agenda, KPI’s en ritme — zodat data weer een bestuurlijk instrument wordt in plaats van ruis.
+            Geen extra dashboards om het dashboarden, maar duidelijke keuzes over wat telt, wie eigenaar is en hoe er gestuurd wordt.
           </p>
         </div>
 

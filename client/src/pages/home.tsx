@@ -79,7 +79,7 @@ export default function Home() {
                   data-testid="text-hero-heading"
                 >
                    Van data-chaos <br/>
-                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/60">naar sturen op feiten.</span>
+                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/60">naar bestuurbare feiten.</span>
                 </motion.h1>
 
                 <motion.div 
@@ -89,8 +89,9 @@ export default function Home() {
                   className="flex flex-col gap-6 max-w-xl"
                 >
                  <p className="text-lg text-white/70 leading-relaxed font-light" data-testid="text-hero-subtitle">
-                    Wij helpen MT's en data-teams om data terug te brengen tot één bestuurlijk instrument: met scherpe keuzes,
-                    KPI-eigenaarschap en een organisatie die het kan dragen.
+                    Wij helpen MT’s en data-teams om data te organiseren als een bestuurlijk stuurmiddel. 
+                    Niet door meer dashboards te bouwen, maar door strategie, teams, tooling en governance op elkaar af te stemmen — 
+                    zodat data klopt, gebruikt wordt en richting geeft aan besluitvorming.
                  </p>
                  <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
                    <Button 
@@ -109,11 +110,11 @@ export default function Home() {
                       onClick={() => document.querySelector('#expertise')?.scrollIntoView({ behavior: 'smooth' })}
                       data-testid="button-hero-secondary"
                    >
-                      Bekijk aanpak (90 dagen)
+                      Bekijk aanpak
                    </Button>
                  </div>
                  <p className="mt-4 text-xs font-mono uppercase tracking-[0.25em] text-white/40" data-testid="text-hero-proofline">
-                   90 dagen · 1–2 dagen p/w · tijdelijk leiderschap
+                   Van analyse tot structurele borging
                  </p>
               </motion.div>
            </div>
@@ -122,7 +123,7 @@ export default function Home() {
              <div className="rounded-sm p-6 max-w-xs ml-auto bg-black/80 border border-white/10 shadow-xl shadow-black/40">
                <p className="text-[11px] font-mono uppercase tracking-[0.25em] text-white/40 mb-3">Signature metric</p>
                <p className="text-sm text-white/90 mb-4">Als morgen twee dashboards elkaar tegenspreken, is het direct duidelijk wie beslist wat klopt.</p>
-               <p className="text-xs text-white/60">Geen extra tooling, wel duidelijke regie op KPI's, definities en eigenaarschap.</p>
+               <p className="text-xs text-white/60">Geen extra tooling, maar duidelijke regie op KPI’s, definities en eigenaarschap — belegd bij de juiste rollen in de organisatie.</p>
              </div>
            </div>
         </div>
@@ -152,49 +153,55 @@ export default function Home() {
       {/* De regie-vraag */}
       <section className="py-24 bg-surface-light border-t border-white/5">
         <div className="container mx-auto px-6 md:px-12">
-          <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 items-start">
+          <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 items-start mb-16">
             <div className="relative pl-6 md:pl-10">
               <span className="hidden md:block regie-vertical-line" aria-hidden="true" />
               <span className="font-mono text-xs text-primary tracking-[0.2em] uppercase mb-4 block" data-testid="text-why-kicker">
-                De regie-vraag
+                De regievraag achter elk BI-probleem
               </span>
               <h2 className="text-4xl md:text-5xl font-serif text-white mb-6" data-testid="text-why-heading">
-                Als twee dashboards elkaar tegenspreken &mdash; wie beslist wat klopt?
+                Niet: welk dashboard klopt? <br/>Maar: wie mag beslissen wat klopt.
               </h2>
-              <p className="text-white/70 text-lg mb-6" data-testid="text-why-body">
-                Zolang niemand dat kan aanwijzen, blijft BI rapportage in plaats van sturing. Niet de tooling loopt vast,
-                maar de bestuurlijke keuzes rond definities, KPI's en eigenaarschap.
-              </p>
-              <div className="grid sm:grid-cols-3 gap-4 mb-6">
-                <div className="space-y-1" data-testid="text-why-bullet-1">
-                  <p className="text-xs font-mono uppercase tracking-[0.2em] text-white/40">Vertrouwen</p>
-                  <p className="text-sm text-white/80">Definities verschillen, discussies herhalen zich.</p>
-                </div>
-                <div className="space-y-1" data-testid="text-why-bullet-2">
-                  <p className="text-xs font-mono uppercase tracking-[0.2em] text-white/40">Prioriteit</p>
-                  <p className="text-sm text-white/80">Alles mag, niets is echt leidend.</p>
-                </div>
-                <div className="space-y-1" data-testid="text-why-bullet-3">
-                  <p className="text-xs font-mono uppercase tracking-[0.2em] text-white/40">Eigenaarschap</p>
-                  <p className="text-sm text-white/80">KPI's zonder eigenaar worden nooit stuurinformatie.</p>
-                </div>
-              </div>
-              <p className="text-sm font-mono uppercase tracking-[0.25em] text-amber-300/80" data-testid="text-why-result">
-                Gevolg: besluitvorming vertraagt, verantwoordelijkheid vervaagt, BI wordt bijzaak.
+              <p className="text-white/70 text-lg" data-testid="text-why-body">
+                Zolang die vraag niet expliciet belegd is, blijft BI rapportage in plaats van sturing. 
+                Het probleem zit zelden in data of tooling, maar in bestuurlijke keuzes: 
+                wie bepaalt definities, welke KPI’s zijn leidend en wie is eigenaar van de waarheid.
               </p>
             </div>
             <div className="border border-white/10 bg-card/60 p-8 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-60 mix-blend-screen pointer-events-none" />
               <div className="relative space-y-4">
                 <p className="text-xs font-mono uppercase tracking-[0.25em] text-white/40" data-testid="text-why-side-kicker">
-                  Bestuurlijke lens
+                  Onze bestuurlijke lens
                 </p>
                 <p className="text-lg text-white/80" data-testid="text-why-side-body">
-                  We kijken niet eerst naar alle data, maar naar de tien beslismomenten die er in de bestuurskamer toe doen.
-                  Daar koppelen we governance, KPI's en tooling aan.
+                  We starten niet bij data, dashboards of tools. We starten bij de beslismomenten van het MT: 
+                  waar moet richting worden gekozen, waar wordt gestuurd en waar wordt verantwoord. 
+                  Pas daarna richten we governance, KPI-structuur, teams en tooling zó in dat deze beslissingen ondersteund worden.
                 </p>
               </div>
             </div>
+          </div>
+          
+          <div className="border-t border-white/5 pt-12">
+             <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-white/40 mb-6">Zonder duidelijke regie ontstaat dit:</h3>
+             <div className="grid md:grid-cols-3 gap-8 mb-8">
+                <div className="space-y-2">
+                   <div className="w-8 h-px bg-primary/50 mb-4" />
+                   <p className="text-white/80">Discussies over definities blijven terugkomen</p>
+                </div>
+                <div className="space-y-2">
+                   <div className="w-8 h-px bg-primary/50 mb-4" />
+                   <p className="text-white/80">Alles wordt gemeten, niets is leidend</p>
+                </div>
+                <div className="space-y-2">
+                   <div className="w-8 h-px bg-primary/50 mb-4" />
+                   <p className="text-white/80">KPI’s zonder eigenaar sturen niemand aan</p>
+                </div>
+             </div>
+             <p className="text-sm font-mono uppercase tracking-[0.1em] text-amber-300/80" data-testid="text-why-result">
+                Gevolg: besluitvorming vertraagt, verantwoordelijkheid vervaagt en BI verliest zijn functie als stuurinstrument.
+             </p>
           </div>
         </div>
       </section>
@@ -205,26 +212,22 @@ export default function Home() {
 
       <WhatWeDo />
 
-      {/* Hoe we werken – 90-dagen regiepad */}
+      {/* Hoe we werken – Regiepad */}
       <section className="py-28 bg-surface-alt border-t border-white/5">
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid lg:grid-cols-[1.1fr_1.3fr] gap-16 items-start">
             {/* Linkerkolom: framing */}
             <div>
-              <span className="font-mono text-xs text-primary tracking-[0.2em] uppercase mb-4 block" data-testid="text-collab-kicker">
-                Hoe we werken
-              </span>
               <h2 className="text-4xl md:text-5xl font-serif text-white mb-4" data-testid="text-collab-heading">
-                In 90 dagen van ruis naar regie.
+                Hoe wij regie brengen op BI & data
               </h2>
               <p className="text-white/60 text-lg mb-6" data-testid="text-collab-body">
-                Geen dikke programma's, maar een tijdelijk leiderschapsmandaat in drie scènes: diagnose, besluitagenda en
-                fractional uitvoering. Zodat besluitvorming sneller, helderder en eigenaarschap écht landt.
+                Wij werken niet met standaardprogramma’s of vaste doorlooptijden. 
+                We nemen tijdelijk de regie op BI & data, vanuit een bestuurlijk perspectief. 
+                Dat betekent: meedenken én meebeslissen over prioriteiten, eigenaarschap en inrichting — 
+                samen met directie, finance en het BI-team. 
+                Soms is dat enkele maanden intensief, soms langer of gefaseerd. De vorm volgt altijd de vraag, niet andersom.
               </p>
-              <div className="space-y-3 text-xs font-mono uppercase tracking-[0.25em] text-white/40" data-testid="text-collab-metadata">
-                <p>90 DAGEN · 3 FASEN · 1–2 DAGEN PER WEEK</p>
-                <p>BESTUURLIJKE LENS · BI-TEAM · GOVERNANCE</p>
-              </div>
             </div>
 
             {/* Rechterkolom: verticale roadmap */}
@@ -238,15 +241,17 @@ export default function Home() {
                   <div className="h-16 w-px bg-gradient-to-b from-white/40 via-white/20 to-transparent" />
                 </div>
                 <span className="inline-flex items-center text-[11px] font-mono uppercase tracking-[0.2em] text-primary mb-2 px-3 py-1 rounded-full border border-primary/40 bg-primary/10" data-testid="badge-phase-1">
-                  Boardroom diagnose
+                  Bestuurlijke diagnose
                 </span>
                 <h3 className="text-xl font-serif text-white mb-1">Waar knelt besluitvorming?</h3>
                 <p className="text-sm text-white/70 leading-relaxed">
-                  In gesprekken met directie, finance en BI brengen we de tien cruciale beslismomenten in kaart. Niet alle data,
-                  wel alle besluiten die ertoe doen.
+                  We starten niet bij dashboards, maar bij de bestuurstafel.
+                  In gesprekken met directie, finance, business en BI brengen we de cruciale beslismomenten in kaart: 
+                  waar moet gestuurd worden, waar loopt verantwoordelijkheid vast en waar spreken cijfers elkaar tegen?
+                  Zo wordt duidelijk welke KPI’s echt leidend moeten zijn — en waar regie ontbreekt.
                 </p>
                 <p className="mt-3 text-[11px] font-mono uppercase tracking-[0.2em] text-white/50" data-testid="text-phase-1-output">
-                  Output: kaart van beslismomenten & stuur-KPI's.
+                  Output: Inzicht in beslismomenten, stuur-KPI’s en regievragen
                 </p>
               </div>
 
@@ -259,15 +264,16 @@ export default function Home() {
                   <div className="h-16 w-px bg-gradient-to-b from-white/40 via-white/20 to-transparent" />
                 </div>
                 <span className="inline-flex items-center text-[11px] font-mono uppercase tracking-[0.2em] text-primary mb-2 px-3 py-1 rounded-full border border-secondary/40 bg-secondary/10" data-testid="badge-phase-2">
-                  BI-roadmap
+                  Regie-agenda & keuzes
                 </span>
-                <h3 className="text-xl font-serif text-white mb-1">Eén compacte agenda.</h3>
+                <h3 className="text-xl font-serif text-white mb-1">Van alles meten naar gericht sturen</h3>
                 <p className="text-sm text-white/70 leading-relaxed">
-                  We vertalen de diagnose naar een 90-dagen BI-roadmap: welke rapportages verdwijnen, welke blijven, welke nieuw zijn
-                  en wie waarvoor eigenaar is.
+                  Op basis van de diagnose maken we scherpe keuzes: wat hoort wél op de BI-agenda, wat bewust niet meer. 
+                  We leggen vast welke KPI’s leidend zijn, wie eigenaar is en hoe definities worden bewaakt. 
+                  Dit vormt de regie-agenda voor BI, data en rapportage — gedragen door MT en teams.
                 </p>
                 <p className="mt-3 text-[11px] font-mono uppercase tracking-[0.2em] text-white/50" data-testid="text-phase-2-output">
-                  Output: 90-dagen roadmap & eigenaarschap per stuur-KPI.
+                  Output: BI-agenda, KPI-structuur en eigenaarschap
                 </p>
               </div>
 
@@ -279,15 +285,16 @@ export default function Home() {
                   </div>
                 </div>
                 <span className="inline-flex items-center text-[11px] font-mono uppercase tracking-[0.2em] text-primary mb-2 px-3 py-1 rounded-full border border-emerald-400/60 bg-emerald-400/10" data-testid="badge-phase-3">
-                  Fractional leadership
+                  Tijdelijk leiderschap & borging
                 </span>
-                <h3 className="text-xl font-serif text-white mb-1">Leiderschap op afroep.</h3>
+                <h3 className="text-xl font-serif text-white mb-1">Regie die blijft werken</h3>
                 <p className="text-sm text-white/70 leading-relaxed">
-                  1–2 dagen per week nemen we tijdelijk het BI-leiderschap op ons. Governance, prioritering en teamcoaching tot de
-                  nieuwe werkwijze staat en zonder ons verder kan.
+                  Waar nodig nemen we tijdelijk het BI-leiderschap op ons. 
+                  We sturen op prioriteiten, richten governance in, coachen het team en zorgen dat het overleg- en beslisritme daadwerkelijk werkt. 
+                  Het doel is altijd hetzelfde: een organisatie die zelfstandig kan sturen, zonder externe afhankelijkheid.
                 </p>
                 <p className="mt-3 text-[11px] font-mono uppercase tracking-[0.2em] text-white/50" data-testid="text-phase-3-output">
-                  Output: werkend ritme, stuur-KPI's en een BI-team dat zelfstandig verder kan.
+                  Output: Werkend ritme, zelfstandig BI-team en geborgde regie
                 </p>
               </div>
             </div>

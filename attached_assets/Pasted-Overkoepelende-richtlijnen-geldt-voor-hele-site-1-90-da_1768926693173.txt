@@ -1,0 +1,318 @@
+Overkoepelende richtlijnen (geldt voor hele site)
+1) “90 dagen” overal eruit (als dominante belofte)
+
+Waarom: het voelt te productmatig, te vast, en botst met jouw echte propositie (fractional/interim regie, maatwerk per organisatie).
+Wat wel: tijd kán op een detailpagina (aanpak), maar niet als headline/kapstok.
+
+Vervangers voor “90 dagen”:
+
+“in de praktijk”
+
+“in enkele weken / maanden (afhankelijk van vraag)”
+
+“gefaseerd”
+
+“tijdelijk leiderschap”
+
+“van diagnose naar borging”
+
+2) End-to-end scope moet voelbaar zijn, zonder “ik doe alles”
+
+Jouw volledige scope moet consistent terugkomen als één paraplu:
+
+Regie op BI & data: strategie, teams, governance, tooling en adoptie — gericht op besluitvorming en sturing.
+
+Niet als opsomming overal, maar als herhaalde onderstroom in subtekst en sectie-intro’s.
+
+3) Bestuurstaal > BI-taal
+
+Schrijf vanuit:
+
+besluitvorming
+
+eigenaarschap
+
+KPI’s die leidend zijn
+
+ritme & governance
+
+verantwoordingslijn / MT
+
+Sectie 1 — Hero
+Wat werkt al goed
+
+Toon is senior en rustig
+
+“Van data-chaos naar sturen op feiten” is sterk
+
+“Data regie voor MT’s” is onderscheidend
+
+Rechter “signature metric” is slim (tooling-onafhankelijk)
+
+Aanbevolen aanpassingen
+A) Headline aanscherpen (minder generiek, meer bestuurlijk)
+
+Huidig: “Van data-chaos naar sturen op feiten.”
+Voorstel (kies 1):
+
+Optie A (voorkeur): “Van data-chaos naar bestuurbare feiten.”
+
+Optie B: “Van data-chaos naar bestuurbare besluitvorming.”
+
+B) Subtekst (jouw volledigheid subtiel verwerken)
+
+Huidig (globaal): “Wij helpen MT’s…”
+Voorstel (vervangtekst):
+
+Wij helpen MT’s en data-teams om data te organiseren als een bestuurlijk stuurmiddel.
+Niet door meer dashboards te bouwen, maar door strategie, teams, tooling en governance op elkaar af te stemmen — zodat data klopt, gebruikt wordt en richting geeft aan besluitvorming.
+
+C) Rechterblok “Signature Metric” (mini-tweak)
+
+Huidig: “Geen extra tooling…”
+Voorstel (aanvulling):
+
+Geen extra tooling, maar duidelijke regie op KPI’s, definities en eigenaarschap — belegd bij de juiste rollen in de organisatie.
+
+D) CTA microcopy (optioneel)
+
+Onder “Bekijk aanpak”:
+
+“Van analyse tot structurele borging.”
+
+Sectie 2 — “De regievraag” (rommelig → herschrijven)
+Probleem huidige versie
+
+Te veel losse blokken, te uitleggerig
+
+Mist één kernankerzin die blijft hangen
+
+Voelt als “BI-problemen opsommen” i.p.v. autoriteit
+
+Nieuwe versie (copy + structuur)
+Linker kolom (hoofdboodschap)
+
+Titel:
+
+De regievraag achter elk BI-probleem
+
+Subheadline:
+
+Niet: welk dashboard klopt?
+Maar: wie mag beslissen wat klopt.
+
+Kerntekst:
+
+Zolang die vraag niet expliciet belegd is, blijft BI rapportage in plaats van sturing.
+Het probleem zit zelden in data of tooling, maar in bestuurlijke keuzes:
+wie bepaalt definities, welke KPI’s zijn leidend en wie is eigenaar van de waarheid.
+
+Rechter kolom (bestuurlijke lens)
+
+Titel:
+
+Onze bestuurlijke lens
+
+Tekst:
+
+We starten niet bij data, dashboards of tools.
+We starten bij de beslismomenten van het MT: waar moet richting worden gekozen, waar wordt gestuurd en waar wordt verantwoord.
+Pas daarna richten we governance, KPI-structuur, teams en tooling zó in dat deze beslissingen ondersteund worden.
+
+Onderblok (gevolg, compacter dan 3 kolommen)
+
+Zonder duidelijke regie ontstaat dit:
+
+Discussies over definities blijven terugkomen
+
+Alles wordt gemeten, niets is leidend
+
+KPI’s zonder eigenaar sturen niemand aan
+
+Gevolg: besluitvorming vertraagt, verantwoordelijkheid vervaagt en BI verliest zijn functie als stuurinstrument.
+
+Sectie 3 — “Voor wie we werken” (nu te abstract → meer herkenning)
+Wat werkt
+
+Headline is sterk:
+
+“Data als bestuurder, niet als bijzaak.”
+
+Doelgroepen zijn correct (RvB/Directie, CFO, Head of BI, PE)
+
+Wat schuurt
+
+Te beschrijvend, te weinig pijn/herkenning
+
+Rollen voelen los; jouw kracht is juist verbinden
+
+Mist regie-ankerzin
+
+Nieuwe versie (copy)
+Intro (boven de kaarten)
+
+Headline (houden):
+
+Data als bestuurder, niet als bijzaak.
+
+Subtekst (nieuw):
+
+Wij werken voor leiders die eindverantwoordelijk zijn voor resultaten — en voelen dat hun BI-omgeving die verantwoordelijkheid nog onvoldoende ondersteunt.
+Niet door gebrek aan data, maar door gebrek aan richting, eigenaarschap en samenhang.
+
+Kaarten (herschreven)
+
+Directie & Raad van Bestuur
+
+U stuurt op strategie en resultaten, maar krijgt verschillende antwoorden op dezelfde vraag.
+Wij helpen u naar één bestuurlijke waarheid, met duidelijke KPI-keuzes en vast eigenaarschap — zodat besluitvorming versnelt.
+
+CFO & Finance
+
+U wilt grip op marge, cash en risico, zonder maandelijkse discussies over definities of herkomst van cijfers.
+Wij brengen rust door financiële KPI’s bestuurlijk te verankeren in governance, tooling en verantwoordelijkheden.
+
+Head of BI / Data & Analytics
+
+U zit tussen een groeiende vraag uit de business en een team dat vooral reactief werkt.
+Wij helpen u prioriteiten, rollen en standaarden aan te brengen — zodat BI van backlog-fabriek naar stuurinstrument beweegt.
+
+Private Equity & Portfolioteams
+
+U wilt consistent inzicht over participaties, zonder dat elke organisatie zijn eigen waarheid bouwt.
+Wij helpen bij portfolio-brede BI-regie, met ruimte voor lokale verschillen en centrale sturing.
+
+Afsluitende ankerzin onder de kaarten (belangrijk)
+
+In al deze rollen draait het om dezelfde vraag: wie bepaalt wat leidend is — en hoe is dat duurzaam georganiseerd?
+
+Sectie 4 — “Wat regie oplevert in de praktijk” (was “Wat u na 90 dagen heeft”)
+Richting
+
+“90 dagen” overal weg
+
+Sectie moet tijdloos zijn: regie zichtbaar in de praktijk
+
+Nieuwe versie (copy)
+Kopregel
+
+Oud: “Wat u na 90 dagen heeft”
+Nieuw:
+
+Wat regie op data in de praktijk betekent
+
+Headline
+
+Regie op data. Zichtbaar in de praktijk.
+
+Subtekst (nieuw)
+
+Wij brengen orde in agenda, KPI’s en ritme — zodat data weer een bestuurlijk instrument wordt in plaats van ruis.
+Geen extra dashboards om het dashboarden, maar duidelijke keuzes over wat telt, wie eigenaar is en hoe er gestuurd wordt.
+
+De 4 kaarten (aangescherpt)
+
+Eén BI-agenda
+
+Een duidelijke, gedragen BI-agenda: wat wél prioriteit heeft, wat bewust niet — afgestemd met MT en teams.
+
+Scherpe stuur-KPI’s
+
+Een compacte set stuur-KPI’s met eenduidige definities, vaste eigenaren en herleidbare bronnen — zodat discussies over cijfers stoppen.
+
+Werkend ritme
+
+Een vast overleg- en beslisritme waarin data leidt tot keuzes en acties — niet tot herhaling van dezelfde discussie.
+
+Een zelfstandig team
+
+Een BI- en datateam met duidelijke rollen, kaders en prioriteiten — dat zelfstandig kan leveren binnen de afgesproken regie.
+
+Sectie 5 — “Hoe we werken” (was 90-dagen framework → tijdloos leiderschap)
+Probleem huidige versie
+
+“In 90 dagen…” voelt als vast programma
+
+Generieke consultancytimeline (“scan/roadmap/borging”) is inwisselbaar
+
+Jouw unieke invalshoek (MT-besluitvorming + eigenaarschap) moet centraler
+
+Nieuwe sectie-opzet (geïnspireerd op het betere donkere blok)
+Sectietitel (kies 1)
+
+“Hoe wij regie brengen op BI & data”
+
+“Tijdelijk leiderschap, blijvende regie”
+
+Intro (linkerkant) — vervangt 90-dagen intro
+
+Wij werken niet met standaardprogramma’s of vaste doorlooptijden.
+We nemen tijdelijk de regie op BI & data, vanuit een bestuurlijk perspectief.
+Dat betekent: meedenken én meebeslissen over prioriteiten, eigenaarschap en inrichting — samen met directie, finance en het BI-team.
+Soms is dat enkele maanden intensief, soms langer of gefaseerd. De vorm volgt altijd de vraag, niet andersom.
+
+Stap 01 — Bestuurlijke diagnose
+
+Titel:
+
+Waar knelt besluitvorming?
+
+Tekst:
+
+We starten niet bij dashboards, maar bij de bestuurstafel.
+In gesprekken met directie, finance, business en BI brengen we de cruciale beslismomenten in kaart: waar moet gestuurd worden, waar loopt verantwoordelijkheid vast en waar spreken cijfers elkaar tegen?
+Zo wordt duidelijk welke KPI’s echt leidend moeten zijn — en waar regie ontbreekt.
+
+Output (klein):
+
+Inzicht in beslismomenten, stuur-KPI’s en regievragen
+
+Stap 02 — Regie-agenda & keuzes
+
+Titel:
+
+Van alles meten naar gericht sturen
+
+Tekst:
+
+Op basis van de diagnose maken we scherpe keuzes: wat hoort wél op de BI-agenda, wat bewust niet meer.
+We leggen vast welke KPI’s leidend zijn, wie eigenaar is en hoe definities worden bewaakt.
+Dit vormt de regie-agenda voor BI, data en rapportage — gedragen door MT en teams.
+
+Output:
+
+BI-agenda, KPI-structuur en eigenaarschap
+
+Stap 03 — Tijdelijk leiderschap & borging
+
+Titel:
+
+Regie die blijft werken
+
+Tekst:
+
+Waar nodig nemen we tijdelijk het BI-leiderschap op ons.
+We sturen op prioriteiten, richten governance in, coachen het team en zorgen dat het overleg- en beslisritme daadwerkelijk werkt.
+Het doel is altijd hetzelfde: een organisatie die zelfstandig kan sturen, zonder externe afhankelijkheid.
+
+Output:
+
+Werkend ritme, zelfstandig BI-team en geborgde regie
+
+Extra notitie voor je agent (tone & style)
+
+Tone keywords Leonardus Insight:
+
+rustig, bestuurlijk, scherp, senior
+
+geen hype, geen “AI/tech buzz”
+
+“regie” als kernwoord (maar niet overal herhalen)
+
+Taalregels:
+
+Vermijd te veel “wij helpen u…” → liever feitelijk en krachtig
+
+Korte zinnen, duidelijke ankerzinnen
+
+Elke sectie moet eindigen met: “en daarom werkt het” (impliciet)
