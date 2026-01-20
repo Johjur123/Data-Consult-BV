@@ -9,7 +9,7 @@ import {
   Users
 } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { BoardroomTestSection } from "@/components/boardroom-test-section";
+import { MethodologySection } from "@/components/methodology-section";
 import strategyImg from "@assets/generated_images/abstract_architectural_structure_representing_stability.png";
 import chessImg from "@assets/generated_images/minimalist_abstract_chess_strategy_dark_teal.png";
 import structureImg from "@assets/generated_images/geometric_architectural_detail_showing_structure.png";
@@ -112,8 +112,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Boardroom Test - Scrollytelling Section */}
-      <BoardroomTestSection />
+      {/* Methodology Section - Replaces Boardroom Test */}
+      <MethodologySection />
 
       {/* Hard Truths Band */}
       <section className="bg-primary text-white py-20">
