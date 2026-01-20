@@ -1,0 +1,182 @@
+De front-end is een Vite/React SPA met een Wouter-router die alleen "/" en een fallback 404 rendert; de app is technisch eenvoudig maar niet modulair opgeschoond.
+
+De homepage gebruikt Lenis + Framer Motion voor scroll/animatie en een custom cursor; dit is visueel sterk maar introduceert extra CPU/paint‑belasting en motion‑gevoeligheid.
+
+Er staat veel “legacy/unused” component‑oppervlak in client/src/components en vooral components/ui (shadcn‑dump), wat onderhoudsrisico en bundle‑bloat veroorzaakt.
+
+CSS bevat custom utilities die nergens gebruikt worden, én classes die wél gebruikt worden maar niet gedefinieerd zijn (bijv. mask-gradient-x, cursor-none-md), plus een typfout in de footer (tosecondary).
+
+Toegankelijkheid: labels zijn niet gekoppeld aan inputs (geen htmlFor/id) en footer “links” zijn <li> zonder semantische interactie‑elementen.
+
+SEO‑basis mist: er is geen <title> en geen meta name="description"; OG/Twitter verwijzen nog naar Replit defaults.
+
+Afbeeldingen worden via <img> zonder expliciete breedte/hoogte of lazy‑loading gebruikt, wat CLS/performancerisico geeft.
+
+Config/boilerplate is deels inconsistent: components.json verwijst naar een niet‑bestaand tailwind.config.ts, en er is mogelijk redundantie tussen @tailwindcss/vite en PostCSS‑config.
+
+B. Bestanden die veilig VERWIJDERD kunnen worden
+
+Inventaris voor alle ongebruikte bestanden binnen /components, /styles, /assets, hooks.
+
+B1 — Ongebruikte section components (legacy/unused)
+
+Bestand	Gebruikt?	Geïmporteerd in	Kan verwijderen?	Risico	Reden
+client/src/components/boardroom-test-section.tsx	Nee	—	Ja	Laag	Geen imports in actieve routes.
+client/src/components/decision-simulator.tsx	Nee	—	Ja	Laag	Ongebruikt section‑component.
+client/src/components/founders-note.tsx	Nee	—	Ja	Laag	Ongebruikt section‑component.
+client/src/components/maturity-check.tsx	Nee	—	Ja	Laag	Ongebruikt section‑component.
+client/src/components/methodology-section.tsx	Nee	—	Ja	Laag	Ongebruikt section‑component.
+client/src/components/need-selector.tsx	Nee	—	Ja	Laag	Ongebruikt section‑component.
+client/src/components/stats-ticker.tsx	Nee	—	Ja	Laag	Ongebruikt section‑component.
+B2 — Ongebruikte UI componenten (shadcn dump)
+
+Bestand	Gebruikt?	Geïmporteerd in	Kan verwijderen?	Risico	Reden
+client/src/components/ui/accordion.tsx	Nee	—	Ja	Laag	Niet gebruikt in routes/components.
+client/src/components/ui/alert-dialog.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/alert.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/aspect-ratio.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/avatar.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/badge.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/breadcrumb.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/button-group.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/calendar.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/carousel.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/chart.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/checkbox.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/collapsible.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/command.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/context-menu.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/dialog.tsx	Nee	—	Ja	Laag	Alleen door ongebruikte command gebruikt.
+client/src/components/ui/drawer.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/dropdown-menu.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/empty.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/field.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/form.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/hover-card.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/input-group.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/input-otp.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/input.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/item.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/kbd.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/label.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/menubar.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/navigation-menu.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/pagination.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/popover.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/progress.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/radio-group.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/resizable.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/scroll-area.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/select.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/separator.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/sidebar.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/skeleton.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/slider.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/sonner.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/spinner.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/switch.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/table.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/tabs.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/textarea.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/toggle-group.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+client/src/components/ui/toggle.tsx	Nee	—	Ja	Laag	Niet gebruikt.
+B3 — Ongebruikte hooks
+
+Bestand	Gebruikt?	Geïmporteerd in	Kan verwijderen?	Risico	Reden
+client/src/hooks/use-mobile.tsx	Nee	—	Ja	Laag	Alleen gebruikt door ongebruikte sidebar component.
+B4 — Assets (opschonen na check)
+
+Aanbeveling: verwijder alle files in attached_assets die niet via @assets worden geïmporteerd; in de huidige app zijn alleen de hero‑afbeelding, de 3 BentoGrid‑beelden en de About‑afbeelding zichtbaar gebruikt.
+Impact: lagere bundle en sneller build.
+
+C. Bestanden die behouden maar OPGESCHOOND moeten worden
+
+Inventaris voor actieve bestanden + concrete cleanup‑acties.
+
+Bestand	Wat aanpassen	Waarom	Concrete suggestie
+client/src/pages/home.tsx	Fix class cursor-none-md, voeg loading="lazy" en (min.) width/height toe aan niet‑hero images, en koppel labels aan inputs	Onbekende class -> geen effect; CLS‑risico; a11y issue	Gebruik md:cursor-none of definieer utility; zet loading="lazy" + dimensies op niet‑boven‑de‑vouw afbeeldingen; voeg id + htmlFor op form controls.
+client/src/components/layout/footer.tsx	Typo in gradient class + semantiek links	tosecondary is fout; lijstitems zijn geen links	Corrigeer naar to-secondary en gebruik <a> of <button> voor sitemap/social/legal items.
+client/src/components/layout/navbar.tsx	Scroll‑listener optimaliseren (passive)	Scroll event kan main‑thread belasten	Overweeg addEventListener("scroll", handleScroll, { passive: true }).
+client/src/components/social-proof.tsx	Definieer mask-gradient-x of verwijder class	Class bestaat niet in CSS	Voeg utility toe in index.css of vervang door bestaande Tailwind utilities.
+client/src/components/for-who-we-work.tsx	handleClick gebruikt targetId niet	Verlies van intentie/bug risico	Gebruik document.querySelector(#${targetId}) of verwijder parameter en hernoem voor duidelijkheid.
+client/src/components/bento-grid.tsx	Verwijder ongebruikte imports (useRef, useScroll, useTransform, cn) + image sizing	Dode code en CLS‑risico	Verwijder imports; voeg breedte/hoogte of aspect-[x/y] toe aan <img>.
+client/src/components/magnetic-cursor.tsx	Respecteer prefers-reduced-motion	Motion‑gevoeligheid/perf	Disable/attenueer animatie bij reduced motion of maak opt‑in toggle.
+client/src/components/ui/button.tsx	hover-elevate, active-elevate-2, border-primary-border etc. ontbreken in CSS	Mogelijke styling‑bugs	Verwijder of definieer deze utilities/variables consistent in index.css of Tailwind theme.
+client/src/components/ui/tooltip.tsx	Verwijder use client directive	Next‑specifiek/legacy in Vite	Verwijder "use client" bovenaan het bestand.
+client/src/hooks/use-toast.ts	useEffect dependency op state	Onnodige re‑subscribe per update	Zet dependency array op [] voor éénmalige registratie.
+client/src/lib/queryClient.ts	Verwijder ongebruikte exports (apiRequest, getQueryFn) of gebruik ze expliciet	Dode code, onderhoudslast	Alleen queryClient exporteren als er geen queries zijn; of voeg usage toe in data‑calls.
+client/src/index.css	Verwijder ongebruikte utilities (.text-gradient-electric, .bg-gradient-midnight, .badge-*, .glass-panel, .regie-vertical-dot, .timeline-rail)	Ongebruikte CSS	Opruimen of pas componenten aan om ze te gebruiken.
+client/index.html	Voeg <title> + meta name="description" toe; update OG/Twitter defaults	SEO‑basis ontbreekt; OG verwijst naar Replit	Voeg <title> en meta description in <head>; zet OG/Twitter naar eigen domein/asset.
+components.json	Verwijs naar bestaande Tailwind config of verwijder file	tailwind.config.ts bestaat niet	Maak config aan of update verwijzing naar huidige Tailwind v4 setup.
+postcss.config.js + vite.config.ts	Controleer redundantie Tailwind setup	Mogelijke dubbele configuratie	Kies óf @tailwindcss/vite óf PostCSS‑plugin, documenteer keuze.
+vite-plugin-meta-images.ts	OG/Twitter update alleen bij Replit domein	Op custom domain blijven Replit defaults	Overweeg algemene configuratie of statisch og:image in index.html.
+client/public/favicon.png	OK	Gebruikt door index.html	Geen actie nodig.
+client/public/opengraph.jpg	OK maar niet direct referenced	Wordt door plugin opgepikt	Check of OG‑image ook op productie‑domein klopt.
+D. CSS / styling cleanup plan
+
+Weg: verwijder ongebruikte utility‑classes in index.css (.text-gradient-electric, .bg-gradient-midnight, .badge-*, .glass-panel, .regie-vertical-dot, .timeline-rail) tenzij je ze in actieve componenten gaat gebruiken.
+
+Samenvoegen: consolideer gradient‑helpers zodat je één set utilities gebruikt (bijv. vervang hard‑coded gradients in componenten door 1–2 centrale utilities).
+
+Migreren naar Tailwind: vervang cursor-none-md door md:cursor-none of definieer een utility; voeg mask-gradient-x toe of vervang door Tailwind gradients + mask-image custom util.
+
+Fixes: corrigeer typo tosecondary → to-secondary om gradient correct te laten werken.
+
+E. Component herstructurering
+Actie per component (keep / merge / delete / refactor)
+
+Keep + Refactor
+
+Home (page): opschonen classes, lazy‑load images, form‑a11y, motion‑tuning.
+
+Navbar: passive scroll listener + semantiek check.
+
+Footer: fix typo + echte links/buttons.
+
+SocialProof: mask-gradient-x definiëren of verwijderen; motion‑perf check.
+
+ForWhoWeWork: fix handleClick targetId bug.
+
+BentoGrid: remove unused imports; image sizing.
+
+MagneticCursor: respecteer reduced motion / opt‑in toggle.
+
+Button (UI): cleanup undefined classes/vars.
+
+Tooltip (UI): remove use client directive.
+
+Keep
+
+NotFound page.
+
+AboutFractionalBI, WhatWeDo, Layout components (na minor image/a11y fixes).
+
+Delete (legacy/unused)
+
+boardroom-test-section, decision-simulator, founders-note, maturity-check, methodology-section, need-selector, stats-ticker (ongebruikt).
+
+Het grootste deel van components/ui/* dat niet door routes gebruikt wordt (zie sectie B2).
+
+F. Technische verbeterpunten (prioriteit)
+
+P1 (moet)
+
+Fix invalid/missing classes: cursor-none-md, mask-gradient-x, en tosecondary zorgen voor styling‑bugs; herstel of verwijder direct.
+
+A11y‑fixes: voeg id/htmlFor toe aan form labels en maak footer items echte links/buttons.
+
+SEO‑basis: voeg <title> + meta name="description" toe en vervang Replit OG/Twitter defaults.
+
+P2 (zou moeten)
+
+Opschonen ongebruikte componenten en shadcn UI om bundle‑grootte en onderhoudslast te reduceren (sectie B).
+
+Verwijder dode code: ongebruikte imports in bento-grid en ongebruikte exports in queryClient en hooks‑subscription fix in use-toast.
+
+Image CLS/Perf: voeg loading="lazy"/width/height of aspect-* toe aan niet‑hero images.
+
+P3 (nice to have)
+
+Motion‑respect: schakel Lenis/magnetische cursor uit bij prefers-reduced-motion om toegankelijkheid en battery‑impact te verbeteren.
+
+Consolideer Tailwind config: beslis tussen Vite‑plugin vs PostCSS‑plugin en documenteer dit om build‑complexiteit te verlagen.

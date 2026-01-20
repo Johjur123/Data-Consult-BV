@@ -36,7 +36,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-primary/30 selection:text-white font-sans overflow-x-hidden cursor-none-md">
+    <div className="min-h-screen bg-background text-foreground selection:bg-primary/30 selection:text-white font-sans overflow-x-hidden md:cursor-none">
       <MagneticCursor />
       <Navbar />
 
@@ -343,16 +343,16 @@ export default function Home() {
                  
                  <form className="space-y-8 relative z-10" onSubmit={(e) => e.preventDefault()}>
                     <div className="space-y-2">
-                       <label className="font-mono text-xs text-white/40 uppercase tracking-widest">Naam</label>
-                       <input type="text" className="w-full bg-transparent border-b border-white/10 py-4 text-white focus:border-primary outline-none transition-colors" placeholder="Uw naam" data-testid="input-contact-name" />
+                       <label htmlFor="contact-name" className="font-mono text-xs text-white/40 uppercase tracking-widest">Naam</label>
+                       <input id="contact-name" type="text" className="w-full bg-transparent border-b border-white/10 py-4 text-white focus:border-primary outline-none transition-colors" placeholder="Uw naam" data-testid="input-contact-name" />
                     </div>
                     <div className="space-y-2">
-                       <label className="font-mono text-xs text-white/40 uppercase tracking-widest">Zakelijk e-mailadres</label>
-                       <input type="email" className="w-full bg-transparent border-b border-white/10 py-4 text-white focus:border-primary outline-none transition-colors" placeholder="naam@organisatie.nl" data-testid="input-contact-email" />
+                       <label htmlFor="contact-email" className="font-mono text-xs text-white/40 uppercase tracking-widest">Zakelijk e-mailadres</label>
+                       <input id="contact-email" type="email" className="w-full bg-transparent border-b border-white/10 py-4 text-white focus:border-primary outline-none transition-colors" placeholder="naam@organisatie.nl" data-testid="input-contact-email" />
                     </div>
                     <div className="space-y-2">
-                       <label className="font-mono text-xs text-white/40 uppercase tracking-widest">Korte context</label>
-                       <textarea className="w-full bg-transparent border-b border-white/10 py-4 text-white focus:border-primary outline-none transition-colors h-32 resize-none" placeholder="Waar wilt u het in de sessie specifiek over hebben?" data-testid="textarea-contact-context" />
+                       <label htmlFor="contact-context" className="font-mono text-xs text-white/40 uppercase tracking-widest">Korte context</label>
+                       <textarea id="contact-context" className="w-full bg-transparent border-b border-white/10 py-4 text-white focus:border-primary outline-none transition-colors h-32 resize-none" placeholder="Waar wilt u het in de sessie specifiek over hebben?" data-testid="textarea-contact-context" />
                     </div>
                     
                     <Button size="lg" className="w-full bg-white text-background hover:bg-white/90 h-14 rounded-none font-mono text-xs uppercase tracking-widest mt-4" data-testid="button-contact-submit">

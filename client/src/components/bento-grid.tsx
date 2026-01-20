@@ -1,7 +1,4 @@
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { cn } from "@/lib/utils";
 import cubeImg from "@assets/generated_images/abstract_glass_cube_grid_interface.png";
 import chessImg from "@assets/generated_images/minimalist_strategic_chess_piece_in_dark_lighting.png";
 import dashImg from "@assets/generated_images/futuristic_dashboard_projection_on_glass.png";
@@ -52,6 +49,9 @@ export function BentoGrid() {
              <img 
                 src={insights[0].image} 
                 alt="Insight" 
+                width="800"
+                height="600"
+                loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-40" 
              />
              <div className="absolute bottom-0 left-0 p-8 md:p-12 z-20 max-w-2xl">
@@ -77,6 +77,9 @@ export function BentoGrid() {
                 <img 
                    src={item.image} 
                    alt="Insight" 
+                   width="400"
+                   height="300"
+                   loading="lazy"
                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-40" 
                 />
                 <div className="relative z-20 p-8">

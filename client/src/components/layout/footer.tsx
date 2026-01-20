@@ -11,7 +11,7 @@ export function Footer() {
           <div className="md:col-span-6">
             <h3 className="text-4xl md:text-5xl font-serif mb-8 text-white leading-tight">
               Klaar om <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary tosecondary">uw datasturing opnieuw te definiëren?</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">uw datasturing opnieuw te definiëren?</span>
             </h3>
             <div className="flex gap-4">
                <a href="mailto:info@fractionalbi.nl" className="group flex items-center gap-2 text-lg font-mono text-white/60 hover:text-white transition-colors border-b border-transparent hover:border-primary pb-1">
@@ -24,27 +24,27 @@ export function Footer() {
           <div className="md:col-span-2 md:col-start-8">
             <h4 className="font-mono text-xs text-primary mb-8 uppercase tracking-widest">Sitemap</h4>
             <ul className="space-y-4 text-white/60 font-light text-sm">
-              <li className="hover:text-white transition-colors cursor-pointer">Insights</li>
-              <li className="hover:text-white transition-colors cursor-pointer">Services</li>
-              <li className="hover:text-white transition-colors cursor-pointer">About</li>
-              <li className="hover:text-white transition-colors cursor-pointer">Careers</li>
+              <li><a href="#insights" className="hover:text-white transition-colors cursor-pointer block">Insights</a></li>
+              <li><a href="#expertise" className="hover:text-white transition-colors cursor-pointer block">Services</a></li>
+              <li><a href="#about" className="hover:text-white transition-colors cursor-pointer block">About</a></li>
+              <li><a href="#" className="hover:text-white transition-colors cursor-pointer block">Careers</a></li>
             </ul>
           </div>
           
           <div className="md:col-span-2">
             <h4 className="font-mono text-xs text-primary mb-8 uppercase tracking-widest">Socials</h4>
             <ul className="space-y-4 text-white/60 font-light text-sm">
-              <li className="hover:text-white transition-colors cursor-pointer">LinkedIn</li>
-              <li className="hover:text-white transition-colors cursor-pointer">Twitter / X</li>
-              <li className="hover:text-white transition-colors cursor-pointer">Medium</li>
+              <li><a href="#" className="hover:text-white transition-colors cursor-pointer block">LinkedIn</a></li>
+              <li><a href="#" className="hover:text-white transition-colors cursor-pointer block">Twitter / X</a></li>
+              <li><a href="#" className="hover:text-white transition-colors cursor-pointer block">Medium</a></li>
             </ul>
           </div>
 
           <div className="md:col-span-2">
             <h4 className="font-mono text-xs text-primary mb-8 uppercase tracking-widest">Legal</h4>
             <ul className="space-y-4 text-white/60 font-light text-sm">
-              <li className="hover:text-white transition-colors cursor-pointer">Privacy Policy</li>
-              <li className="hover:text-white transition-colors cursor-pointer">Terms of Service</li>
+              <li><a href="#" className="hover:text-white transition-colors cursor-pointer block">Privacy Policy</a></li>
+              <li><a href="#" className="hover:text-white transition-colors cursor-pointer block">Terms of Service</a></li>
             </ul>
           </div>
         </div>

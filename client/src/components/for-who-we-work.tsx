@@ -28,7 +28,7 @@ const segments = [
 ];
 
 export function ForWhoWeWork() {
-  const handleClick = (targetId: string) => {
+  const handleClick = () => {
     const el = document.querySelector("#expertise");
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
@@ -52,7 +52,7 @@ export function ForWhoWeWork() {
           {segments.map((segment, index) => (
             <button
               key={segment.id}
-              onClick={() => handleClick(segment.id)}
+              onClick={() => handleClick()}
               className="group text-left pb-6 pt-4 border-b border-white/10 hover:border-primary/60 transition-colors flex flex-col justify-between focus-ring-accent cursor-pointer bg-transparent"
               data-testid={`card-segment-${index}`}
             >

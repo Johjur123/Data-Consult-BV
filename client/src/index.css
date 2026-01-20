@@ -83,74 +83,13 @@
 }
 
 @layer utilities {
-  .text-gradient-electric {
-    background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  .bg-gradient-midnight {
-    background: linear-gradient(180deg, hsl(222 47% 4%) 0%, hsl(222 47% 8%) 100%);
-  }
-
-  /* New lighter surfaces for dual-tone layout */
-  .bg-surface-light {
-    /* Veel lichter oppervlak voor content-secties */
-    background: radial-gradient(circle at top left, rgba(59,130,246,0.10), transparent 55%), #1f2937; /* duidelijk lichter blauwgrijs */
-  }
-
-  .bg-surface-alt {
-    background: radial-gradient(circle at bottom right, rgba(251,191,36,0.10), transparent 55%), #020617;
-  }
-
-  .badge-strategy {
-    background: linear-gradient(120deg, #3B82F6, #22C55E);
-  }
-
-  .badge-leadership {
-    background: linear-gradient(120deg, #A855F7, #F97316);
-  }
-
-  .badge-tech {
-    background: linear-gradient(120deg, #06B6D4, #3B82F6);
+  .mask-gradient-x {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   }
 
   .focus-ring-accent:focus-visible {
     outline: 2px solid #22C55E;
     outline-offset: 2px;
-  }
-
-  .glass-panel {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-  }
-  
-  .glass-panel:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 255, 255, 0.15);
-  }
-
-  /* Signature regie-lijn en timeline elementen */
-  .regie-vertical-line {
-    position: absolute;
-    inset-block: 0;
-    left: 0.25rem;
-    width: 1px;
-    background: linear-gradient(to bottom, rgba(148,163,184,0), rgba(148,163,184,0.9), rgba(148,163,184,0));
-  }
-
-  .regie-vertical-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 9999px;
-    background: #3B82F6;
-    box-shadow: 0 0 0 4px rgba(59,130,246,0.25);
-  }
-
-  .timeline-rail {
-    height: 1px;
-    width: 100%;
-    background: linear-gradient(to right, rgba(148,163,184,0.1), rgba(148,163,184,0.7), rgba(148,163,184,0.1));
   }
 }
