@@ -146,18 +146,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Proof strip - rustiger, enkel één regel */}
-      <section className="py-6 border-t border-white/5 bg-background/60">
-        <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-4">
-          <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-white/40" data-testid="text-proof-kicker">
-            In 90 dagen naar regie
-          </span>
-          <p className="text-sm text-white/70" data-testid="text-proof-line">
-            Eén versie van de waarheid · eigenaarschap per stuur-KPI · vast MT-ritme · minder rapporten, meer besluiten.
-          </p>
-        </div>
-      </section>
-
+      {/* Social proof direct onder hero */}
       <SocialProof />
 
       {/* De regie-vraag */}

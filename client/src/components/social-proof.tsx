@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const clients = [
+  { name: "Erasmus MC", style: "font-serif tracking-wide" },
   { name: "Unilever", style: "font-serif tracking-widest uppercase" },
   { name: "bol.com", style: "font-sans font-black tracking-tighter lowercase text-xl" },
-  { name: "Louwman", style: "font-serif font-bold tracking-wide" },
-  { name: "ErasmusMC", style: "font-mono font-medium tracking-tight uppercase" },
+  { name: "Louwman", style: "font-serif font-bold tracking-wide" }
 ];
 
 export function SocialProof() {
