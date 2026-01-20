@@ -239,53 +239,67 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-6">
-            <div className="relative border border-white/10 bg-card/60 p-6 flex flex-col justify-between overflow-hidden hover:border-primary/60 transition-colors">
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-60" />
-              <div>
-                <span className="inline-flex items-center text-[11px] font-mono uppercase tracking-[0.2em] text-primary mb-3 px-3 py-1 rounded-full border border-primary/40 bg-primary/10" data-testid="badge-phase-1">
-                  Fase 1  b7 Boardroom diagnose
-                </span>
-                <h3 className="text-xl font-serif text-white mb-2">Waar knelt besluitvorming?</h3>
+          {/* Horizontale 90-dagen timeline */}
+          <div className="relative">
+            <div className="hidden lg:block absolute left-0 right-0 top-9 h-px bg-gradient-to-r from-white/10 via-white/40 to-white/10" aria-hidden="true" />
+
+            <div className="grid gap-6 lg:grid-cols-3">
+              {/* Fase 1 */}
+              <div className="border border-white/10 bg-card/70 p-6 flex flex-col gap-4">
+                <div className="flex items-center gap-3 mb-1">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/30 text-xs font-mono text-white/70">
+                    01
+                  </div>
+                  <span className="inline-flex items-center text-[11px] font-mono uppercase tracking-[0.2em] text-primary px-3 py-1 rounded-full border border-primary/40 bg-primary/10" data-testid="badge-phase-1">
+                    Boardroom diagnose
+                  </span>
+                </div>
+                <h3 className="text-xl font-serif text-white">Waar knelt besluitvorming?</h3>
                 <p className="text-sm text-white/70 leading-relaxed">
                   In gesprekken met directie, finance en BI brengen we de tien cruciale beslismomenten in kaart. Niet alle data,
                   wel alle besluiten die ertoe doen.
                 </p>
-                <p className="mt-4 text-[11px] font-mono uppercase tracking-[0.2em] text-white/50" data-testid="text-phase-1-output">
+                <p className="mt-2 text-[11px] font-mono uppercase tracking-[0.2em] text-white/50" data-testid="text-phase-1-output">
                   Output: kaart van beslismomenten & stuur-KPI's.
                 </p>
               </div>
-            </div>
 
-            <div className="relative border border-white/10 bg-card/60 p-6 flex flex-col justify-between overflow-hidden hover:border-secondary/60 transition-colors">
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-secondary/15 via-transparent to-transparent opacity-60" />
-              <div>
-                <span className="inline-flex items-center text-[11px] font-mono uppercase tracking-[0.2em] text-primary mb-3 px-3 py-1 rounded-full border border-secondary/40 bg-secondary/10" data-testid="badge-phase-2">
-                  Fase 2  b7 BI-roadmap
-                </span>
-                <h3 className="text-xl font-serif text-white mb-2">Eén compacte agenda.</h3>
+              {/* Fase 2 */}
+              <div className="border border-white/10 bg-card/70 p-6 flex flex-col gap-4">
+                <div className="flex items-center gap-3 mb-1">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/30 text-xs font-mono text-white/70">
+                    02
+                  </div>
+                  <span className="inline-flex items-center text-[11px] font-mono uppercase tracking-[0.2em] text-primary px-3 py-1 rounded-full border border-secondary/40 bg-secondary/10" data-testid="badge-phase-2">
+                    BI-roadmap
+                  </span>
+                </div>
+                <h3 className="text-xl font-serif text-white">Eén compacte agenda.</h3>
                 <p className="text-sm text-white/70 leading-relaxed">
                   We vertalen de diagnose naar een 90-dagen BI-roadmap: welke rapportages verdwijnen, welke blijven, welke nieuw zijn
                   en wie waarvoor eigenaar is.
                 </p>
-                <p className="mt-4 text-[11px] font-mono uppercase tracking-[0.2em] text-white/50" data-testid="text-phase-2-output">
+                <p className="mt-2 text-[11px] font-mono uppercase tracking-[0.2em] text-white/50" data-testid="text-phase-2-output">
                   Output: 90-dagen roadmap & eigenaarschap per stuur-KPI.
                 </p>
               </div>
-            </div>
 
-            <div className="relative border border-white/10 bg-card/60 p-6 flex flex-col justify-between overflow-hidden hover:border-emerald-400/70 transition-colors">
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-emerald-400/15 via-transparent to-transparent opacity-60" />
-              <div>
-                <span className="inline-flex items-center text-[11px] font-mono uppercase tracking-[0.2em] text-primary mb-3 px-3 py-1 rounded-full border border-emerald-400/60 bg-emerald-400/10" data-testid="badge-phase-3">
-                  Fase 3  b7 Fractional leadership
-                </span>
-                <h3 className="text-xl font-serif text-white mb-2">Leiderschap op afroep.</h3>
+              {/* Fase 3 */}
+              <div className="border border-white/10 bg-card/70 p-6 flex flex-col gap-4">
+                <div className="flex items-center gap-3 mb-1">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/30 text-xs font-mono text-white/70">
+                    03
+                  </div>
+                  <span className="inline-flex items-center text-[11px] font-mono uppercase tracking-[0.2em] text-primary px-3 py-1 rounded-full border border-emerald-400/60 bg-emerald-400/10" data-testid="badge-phase-3">
+                    Fractional leadership
+                  </span>
+                </div>
+                <h3 className="text-xl font-serif text-white">Leiderschap op afroep.</h3>
                 <p className="text-sm text-white/70 leading-relaxed">
                   1–2 dagen per week nemen we tijdelijk het BI-leiderschap op ons. Governance, prioritering en teamcoaching tot de
                   nieuwe werkwijze staat en zonder ons verder kan.
                 </p>
-                <p className="mt-4 text-[11px] font-mono uppercase tracking-[0.2em] text-white/50" data-testid="text-phase-3-output">
+                <p className="mt-2 text-[11px] font-mono uppercase tracking-[0.2em] text-white/50" data-testid="text-phase-3-output">
                   Output: werkend ritme, stuur-KPI's en een BI-team dat zelfstandig verder kan.
                 </p>
               </div>
