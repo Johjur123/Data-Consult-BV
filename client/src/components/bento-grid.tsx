@@ -36,8 +36,8 @@ export function BentoGrid() {
       <div className="container mx-auto px-6 md:px-12">
         <div className="mb-16 flex justify-between items-end">
            <div>
-              <span className="font-mono text-xs text-primary tracking-widest uppercase mb-4 block">Laatste inzichten</span>
-              <h2 className="text-4xl md:text-5xl font-serif text-white">Inzichten voor de bestuurskamer</h2>
+              <span className="font-mono text-xs text-primary tracking-widest uppercase mb-4 block" data-testid="text-insights-kicker">Laatste inzichten</span>
+              <h2 className="text-4xl md:text-5xl font-serif text-white" data-testid="text-insights-heading">Inzichten voor de bestuurskamer</h2>
            </div>
            <button className="hidden md:flex items-center gap-2 text-white/60 hover:text-white transition-colors font-mono text-xs uppercase tracking-widest group" data-testid="button-insights-all">
               Alle artikelen
@@ -61,11 +61,11 @@ export function BentoGrid() {
                 <h3 className="text-3xl md:text-5xl font-serif text-white mb-6 leading-tight group-hover:text-primary transition-colors duration-300">
                    {insights[0].title}
                 </h3>
-                <p className="text-white/60 text-lg mb-8 line-clamp-2 md:line-clamp-none">
+                <p className="text-white/60 text-lg mb-8 line-clamp-2 md:line-clamp-none" data-testid="text-insight-feature-desc">
                    {insights[0].desc}
                 </p>
-                <div className="flex items-center gap-4 text-white font-mono text-xs uppercase tracking-widest group/btn cursor-pointer">
-                   Read Article <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:-translate-y-1 group-hover/btn:translate-x-1" />
+                <div className="flex items-center gap-4 text-white font-mono text-xs uppercase tracking-widest group/btn cursor-pointer" data-testid="button-insight-feature-read">
+                   Lees artikel <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:-translate-y-1 group-hover/btn:translate-x-1" />
                 </div>
              </div>
           </div>

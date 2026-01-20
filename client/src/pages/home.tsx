@@ -164,7 +164,8 @@ export default function Home() {
       <section className="py-24 bg-surface-light border-t border-white/5">
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 items-start">
-            <div>
+            <div className="relative pl-6 md:pl-10">
+              <span className="hidden md:block regie-vertical-line" aria-hidden="true" />
               <span className="font-mono text-xs text-primary tracking-[0.2em] uppercase mb-4 block" data-testid="text-why-kicker">
                 De regie-vraag
               </span>
@@ -172,8 +173,8 @@ export default function Home() {
                 Als twee dashboards elkaar tegenspreken &mdash; wie beslist wat klopt?
               </h2>
               <p className="text-white/70 text-lg mb-6" data-testid="text-why-body">
-                Zolang niemand dat kan aanwijzen, blijft BI rapportage in plaats van sturing. Het probleem is zelden tooling.
-                Het is eigenaarschap, prioriteit en ritme.
+                Zolang niemand dat kan aanwijzen, blijft BI rapportage in plaats van sturing. Niet de tooling loopt vast,
+                maar de bestuurlijke keuzes rond definities, KPI's en eigenaarschap.
               </p>
               <div className="grid sm:grid-cols-3 gap-4 mb-6">
                 <div className="space-y-1" data-testid="text-why-bullet-1">
@@ -272,17 +273,17 @@ export default function Home() {
 
       <BentoGrid />
 
-      {/* Quote Section (High Contrast) */}
+      {/* Impact-sectie (High Contrast) */}
       <section id="impact" className="py-32 bg-primary/10 relative overflow-hidden">
          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
          
          <div className="container mx-auto px-6 md:px-12 relative z-10 text-center">
-            <h2 className="text-3xl md:text-5xl font-serif text-white leading-tight max-w-4xl mx-auto mb-12">
-               "Data without governance is a liability. <br/>
-               Data with strategy is an <span className="text-primary italic">unfair advantage.</span>"
+            <h2 className="text-3xl md:text-5xl font-serif text-white leading-tight max-w-4xl mx-auto mb-12" data-testid="text-impact-quote">
+               "Data zonder regie is ruis. <br/>
+               Data met strategie wordt een <span className="text-primary italic">beslissingsmachine.</span>"
             </h2>
             <div className="inline-flex flex-col items-center">
-               <span className="font-mono text-xs text-white/40 uppercase tracking-widest mb-2">Our Philosophy</span>
+               <span className="font-mono text-xs text-white/40 uppercase tracking-widest mb-2" data-testid="text-impact-kicker">Onze filosofie</span>
                <div className="w-px h-12 bg-gradient-to-b from-white/20 to-transparent" />
             </div>
          </div>
