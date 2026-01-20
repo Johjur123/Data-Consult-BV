@@ -8,24 +8,59 @@ import {
   Layout,
   Users
 } from "lucide-react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { MethodologySection } from "@/components/methodology-section";
+import { FoundersNote } from "@/components/founders-note";
+import { MaturityCheck } from "@/components/maturity-check";
+import { StatsTicker } from "@/components/stats-ticker";
+import { MagneticCursor } from "@/components/magnetic-cursor";
 import strategyImg from "@assets/generated_images/abstract_architectural_structure_representing_stability.png";
 import chessImg from "@assets/generated_images/minimalist_abstract_chess_strategy_dark_teal.png";
 import structureImg from "@assets/generated_images/geometric_architectural_detail_showing_structure.png";
 import maturityImg from "@assets/generated_images/abstract_digital_maturity_growth_chart.png";
+import { useEffect, useState } from "react";
+import Lenis from "lenis";
 
 export default function Home() {
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 500], [0, -50]);
   const y2 = useTransform(scrollY, [0, 500], [0, -20]);
 
+  // Dynamic Headline
+  const words = ["Bestuurlijk Inzicht.", "Strategische Rust.", "Schaalbare Groei."];
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    // Initialize Smooth Scroll
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
+    
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Headline Interval
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % words.length);
+    }, 3000);
+
+    return () => {
+        clearInterval(interval);
+        lenis.destroy();
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-primary/10 selection:text-primary font-sans overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground selection:bg-primary/10 selection:text-primary font-sans overflow-x-hidden cursor-none-md">
+      <MagneticCursor />
       <Navbar />
 
       {/* Editorial Hero Grid */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 px-6 md:px-12 container mx-auto">
+      <section className="relative pt-32 pb-12 md:pt-40 md:pb-24 px-6 md:px-12 container mx-auto">
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           
           {/* Left: Value Prop */}
@@ -41,8 +76,20 @@ export default function Home() {
               </span>
             </div>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-medium leading-[1.1] mb-8 text-foreground text-balance">
-              Van Data Chaos naar <span className="italic text-primary border-b-4 border-secondary/20">Bestuurlijk Inzicht.</span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-medium leading-[1.1] mb-8 text-foreground text-balance h-[3.3em]">
+              Van Data Chaos naar <br/>
+              <AnimatePresence mode="wait">
+                <motion.span 
+                    key={index}
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -20, opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="italic text-primary border-b-4 border-secondary/20 inline-block"
+                >
+                    {words[index]}
+                </motion.span>
+              </AnimatePresence>
             </h1>
             
             <p className="text-xl text-muted-foreground leading-relaxed mb-10 font-light border-l-4 border-border pl-6">
@@ -52,7 +99,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 size="lg" 
-                className="bg-primary hover:bg-primary/90 text-white h-14 px-8 rounded-sm text-base shadow-lg shadow-primary/20 transition-all hover:-translate-y-1"
+                className="bg-primary hover:bg-primary/90 text-white h-14 px-8 rounded-sm text-base shadow-lg shadow-primary/20 transition-all hover:-translate-y-1 cursor-hover"
                 onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Plan Strategische Sessie
@@ -65,7 +112,7 @@ export default function Home() {
              {/* Feature Tile - Large */}
              <motion.div 
                 style={{ y: y1 }}
-                className="md:col-span-2 group relative aspect-[2/1] overflow-hidden rounded-sm cursor-pointer shadow-xl"
+                className="md:col-span-2 group relative aspect-[2/1] overflow-hidden rounded-sm cursor-pointer shadow-xl cursor-hover"
              >
                 <img src={chessImg} alt="Strategic Leadership" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -84,7 +131,7 @@ export default function Home() {
              {/* Secondary Tile - Vertical */}
              <motion.div 
                 style={{ y: y2 }}
-                className="group relative aspect-[4/5] overflow-hidden rounded-sm cursor-pointer shadow-lg"
+                className="group relative aspect-[4/5] overflow-hidden rounded-sm cursor-pointer shadow-lg cursor-hover"
              >
                 <img src={structureImg} alt="Governance" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors" />
@@ -98,7 +145,7 @@ export default function Home() {
              {/* Tertiary Tile - Vertical */}
              <motion.div 
                 style={{ y: y2 }}
-                className="group relative aspect-[4/5] overflow-hidden rounded-sm cursor-pointer shadow-lg"
+                className="group relative aspect-[4/5] overflow-hidden rounded-sm cursor-pointer shadow-lg cursor-hover"
              >
                 <img src={maturityImg} alt="Maturity Scan" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors" />
@@ -112,30 +159,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Methodology Section - Replaces Boardroom Test */}
+      <StatsTicker />
+
+      {/* Methodology Section */}
       <MethodologySection />
+      
+      {/* 3-Click Maturity Check (Replaces Hard Truths) */}
+      <MaturityCheck />
 
-      {/* Hard Truths Band */}
-      <section className="bg-primary text-white py-20">
-        <div className="container mx-auto px-6 md:px-12">
-           <div className="grid md:grid-cols-3 gap-12 divide-y md:divide-y-0 md:divide-x divide-white/20">
-              <div className="pt-8 md:pt-0 md:px-8 first:pl-0 text-center md:text-left">
-                 <div className="text-xs font-bold uppercase tracking-widest text-secondary mb-4">Mandaat</div>
-                 <p className="font-serif text-xl leading-relaxed">"Wie beslist bij conflicterende cijfers? Zonder mandaat geen waarheid."</p>
-              </div>
-              <div className="pt-8 md:pt-0 md:px-8 text-center md:text-left">
-                 <div className="text-xs font-bold uppercase tracking-widest text-secondary mb-4">Eigenaarschap</div>
-                 <p className="font-serif text-xl leading-relaxed">"KPI's zonder eigenaar zijn slechts getallen op een scherm."</p>
-              </div>
-              <div className="pt-8 md:pt-0 md:px-8 text-center md:text-left">
-                 <div className="text-xs font-bold uppercase tracking-widest text-secondary mb-4">Prioriteit</div>
-                 <p className="font-serif text-xl leading-relaxed">"Alles meten is niets weten. Focus op wat de strategie drijft."</p>
-              </div>
-           </div>
-        </div>
-      </section>
-
-      {/* Services List (Kept clean) */}
+      {/* Services List */}
       <section id="expertise" className="py-24 md:py-32 bg-background">
         <div className="container mx-auto px-6 md:px-12">
           <div className="max-w-4xl mb-16">
@@ -169,7 +201,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="group border border-border p-8 hover:border-primary/50 hover:bg-secondary/5 transition-colors cursor-pointer rounded-sm"
+                className="group border border-border p-8 hover:border-primary/50 hover:bg-secondary/5 transition-colors cursor-pointer rounded-sm cursor-hover"
               >
                 <div className="flex flex-col md:flex-row gap-6 md:items-center justify-between">
                    <div className="flex items-center gap-4">
@@ -187,45 +219,48 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Founders Note */}
+      <FoundersNote />
+
       {/* Contact CTA */}
-      <section id="contact" className="py-32 bg-foreground text-background relative overflow-hidden">
-        {/* Abstract background element */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-12 translate-x-1/4" />
+      <section id="contact" className="py-32 bg-primary/5 relative overflow-hidden">
         
         <div className="container mx-auto px-6 md:px-12 max-w-4xl relative z-10">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-serif mb-6 text-white">Klaar voor de volgende stap?</h2>
-              <p className="text-white/60 text-lg">
+              <h2 className="text-4xl md:text-5xl font-serif mb-6 text-foreground">Klaar voor de volgende stap?</h2>
+              <p className="text-muted-foreground text-lg">
                 Plan een vrijblijvend strategisch gesprek om uw uitdagingen te bespreken.
               </p>
             </div>
 
-            <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-white/40">Naam</label>
-                  <input type="text" className="w-full bg-transparent border-b border-white/20 py-4 text-white focus:border-secondary outline-none transition-colors" placeholder="Uw naam" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-white/40">Bedrijf</label>
-                  <input type="text" className="w-full bg-transparent border-b border-white/20 py-4 text-white focus:border-secondary outline-none transition-colors" placeholder="Uw organisatie" />
-                </div>
-              </div>
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-white/40">Email</label>
-                <input type="email" className="w-full bg-transparent border-b border-white/20 py-4 text-white focus:border-secondary outline-none transition-colors" placeholder="naam@bedrijf.nl" />
-              </div>
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-white/40">Bericht</label>
-                <textarea className="w-full bg-transparent border-b border-white/20 py-4 text-white focus:border-secondary outline-none transition-colors h-32 resize-none" placeholder="Waar loopt u tegenaan?" />
-              </div>
-              
-              <div className="flex justify-center pt-8">
-                <Button size="lg" className="bg-white text-foreground hover:bg-white/90 min-w-[240px] h-16 text-lg rounded-sm font-serif">
-                  Verstuur Aanvraag
-                </Button>
-              </div>
-            </form>
+            <div className="bg-background shadow-2xl p-8 md:p-12 border border-border">
+                <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Naam</label>
+                      <input type="text" className="w-full bg-transparent border-b border-border py-4 text-foreground focus:border-primary outline-none transition-colors" placeholder="Uw naam" />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Bedrijf</label>
+                      <input type="text" className="w-full bg-transparent border-b border-border py-4 text-foreground focus:border-primary outline-none transition-colors" placeholder="Uw organisatie" />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Email</label>
+                    <input type="email" className="w-full bg-transparent border-b border-border py-4 text-foreground focus:border-primary outline-none transition-colors" placeholder="naam@bedrijf.nl" />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Bericht</label>
+                    <textarea className="w-full bg-transparent border-b border-border py-4 text-foreground focus:border-primary outline-none transition-colors h-32 resize-none" placeholder="Waar loopt u tegenaan?" />
+                  </div>
+                  
+                  <div className="flex justify-center pt-8">
+                    <Button size="lg" className="bg-primary text-white hover:bg-primary/90 min-w-[240px] h-16 text-lg rounded-sm font-serif cursor-hover">
+                      Verstuur Aanvraag
+                    </Button>
+                  </div>
+                </form>
+            </div>
         </div>
       </section>
 
